@@ -48,5 +48,15 @@ class TasksController extends Controller
             $MyTask->save();
             return redirect()->route('tasks.index');
     }
+
+    public function show($id){
+            $MyTask = Task::find($id);
+            return view('tasks.show', ['task'=>$MyTask]);
+    }
+
+    public function destroy($id){
+        Task::find($id)->delete();
+        return redirect()->route('tasks.index');
+    }
 }
 
