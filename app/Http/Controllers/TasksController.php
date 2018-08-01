@@ -46,7 +46,7 @@ class TasksController extends Controller
             $MyTask = Task::find($id);
             $MyTask->fill($request->all());
             $MyTask->save();
-            return redirect()->route('task.index');
+            return redirect()->route('tasks.index');
     }
 }
 
